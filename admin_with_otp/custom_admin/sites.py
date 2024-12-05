@@ -121,9 +121,6 @@ class AdminSite(admin.AdminSite):
 
 
     def cancel_otp(self, request):
-        # request.session.pop('login_state', None)
-        # request.session.pop('otp_code', None)
-        # request.session.pop('otp_exp', None)
         request.session.flush()
         return redirect("admin:login")
 
