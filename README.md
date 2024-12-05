@@ -1,7 +1,7 @@
 # Django Admin With two step verification via OTP-SMS
 
 ```Python
-if views.liked.this:
+if viewer.liked.this:
     give_a_star(":))")
 ```
 
