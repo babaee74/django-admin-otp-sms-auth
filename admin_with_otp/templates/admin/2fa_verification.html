@@ -1,0 +1,26 @@
+{% extends "admin/login.html" %}
+
+{% block content %}
+  {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+      <p class="errornote">
+	{{ error }}
+      </p>
+    {% endfor %}
+  {% endif %}
+
+
+  <h2>Verification</h2>
+  <p>It will be expired in 2 minutes.</p>
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="form-row">
+        <label for="otp">Verification Code:</label>
+        <input type="text" name="otp" required>
+    </div>
+    <div class="submit-row">
+      <input type="submit" value="Submit">
+      <input type="button" value="Cancel" onclick="window.location.href='{% url 'admin:cancel-otp' %}'">
+    </div>
+  </form>
+{% endblock %}
